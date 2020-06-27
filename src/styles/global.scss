@@ -1,0 +1,52 @@
+@import 'colors';
+
+@tailwind base;
+@tailwind components;
+
+// Antd Button - loading spinner alignment in button
+.ant-btn .ant-btn-loading-icon {
+  display: inline-flex !important;
+}
+
+// Antd Modal - custom modal header color
+.ant-modal-header {
+  background-color: $color-kaayu-blue;
+
+  .ant-modal-title {
+    color: #fff;
+  }
+}
+
+// Antd Form Field - put labels on top rather than the default inline, reduce label height
+.ant-row.ant-form-item {
+  display: flex;
+  flex-direction: column;
+
+  .ant-col.ant-form-item-label {
+    text-align: justify;
+
+    .ant-form-item-no-colon {
+      height: 30px;
+    }
+  }
+}
+
+// Antd Step Icon - center step icon
+.ant-steps-item .ant-steps-item-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  .ant-steps-icon {
+    top: 0;
+  }
+}
+
+// Antd Message - center icon and text
+.ant-message-custom-content.ant-message-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@tailwind utilities;
