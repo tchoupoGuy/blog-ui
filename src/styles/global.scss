@@ -1,4 +1,4 @@
-@import 'colors';
+@import "colors";
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
 
 // Antd Modal - custom modal header color
 .ant-modal-header {
-  background-color: $color-kaayu-blue;
+  background-color: $color-blog-blue;
 
   .ant-modal-title {
     color: #fff;

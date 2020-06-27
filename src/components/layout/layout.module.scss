@@ -1,9 +1,9 @@
-@import "variables";
+// @import "variables";
 
 .logo {
   background: rgba(255, 255, 255, 0.2);
   padding: 15px;
-  width: $drawer-width;
+  width: 200px;
 
   .title {
     color: #fff;
@@ -18,5 +18,5 @@
 .contentContainer {
   background: #fff;
   padding: 24px;
-  height: calc(100% - #{$footer-height}); // Remove the footer height
+  height: calc(100% - 70px); // Remove the footer height
 }

@@ -22,8 +22,8 @@ export default function NewPasswordForm({ onSubmit }: NewPasswordFormProps) {
   return (
     <>
       <div className="text-center mb-6 text-md">
-        Welcome to Kaayu! In order to create your account you will need to set
-        up a new password
+        Welcome to Guy Blog! In order to create your account you will need to
+        set up a new password
       </div>
       <Form<NewPasswordModel>
         onSubmit={onSubmit}

@@ -1,11 +1,9 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import { Menu } from 'antd';
-import { UserOutlined, PlusOutlined } from '@ant-design/icons';
-import { Auth } from 'aws-amplify';
+import React from "react";
+import { Menu } from "antd";
+import { UserOutlined, PlusOutlined } from "@ant-design/icons";
 
-import Link from '@myBlog/components/link';
-import { Route } from '@myBlog/constants/routes';
+import Link from "../../components/link";
+import { Route } from "../../constants/routes";
 
 interface LayoutMenuProps {
   items: {
@@ -16,13 +14,13 @@ interface LayoutMenuProps {
 }
 
 function LayoutMenu({ items = [] }: LayoutMenuProps) {
-  const { pathname } = useRouter();
+  // const { pathname } = useRouter();
 
-  // Extracts the first url chunk: /users/manage/userId -> users
-  const [selectedKey] = pathname.substring(1).split('/');
+  // // Extracts the first url chunk: /users/manage/userId -> users
+  // const [selectedKey] = pathname.substring(1).split('/');
 
   return (
-    <Menu theme='dark' mode='inline' defaultSelectedKeys={[`/${selectedKey}`]}>
+    <Menu theme="dark" mode="inline">
       {items.map(({ Icon, link, title }) => (
         <Menu.Item key={link} icon={<Icon />}>
           <Link to={link}>{title}</Link>
@@ -39,12 +37,12 @@ export default () =>
       {
         Icon: UserOutlined,
         link: Route.ABOUT,
-        title: 'About',
+        title: "About"
       },
       {
         Icon: PlusOutlined,
         link: Route.RESOURCES,
-        title: 'Resources',
-      },
-    ],
+        title: "Resources"
+      }
+    ]
   });

@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "antd";
 import "antd/dist/antd.css";
-import "../../styles/global.scss";
+import "../styles/global.scss";
 import { Provider } from "react-redux";
 
 import { configureStore } from "../store/configure-store";
@@ -16,10 +16,6 @@ export default function App(props: any) {
   const { Component, pageProps } = props;
   return (
     <Provider store={store}>
-      {/* <Head>
-      <title>Kaayu Admin</title>
-      <link rel='shortcut icon' href='/favicon.png' />
-    </Head> */}
       <WithAuth>
         <Layout>
           <Component {...pageProps} />
