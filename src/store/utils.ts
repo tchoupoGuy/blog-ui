@@ -1,12 +1,18 @@
 import { Action as ReduxAction, Reducer as ReduxReducer } from "redux";
 
-import rootReducer from "../store/root-reducer";
+import rootReducer from "./root-reducer";
 
 export interface Action<P = any, M = any> extends ReduxAction {
   payload?: P;
   meta?: M;
   error?: any;
 }
+
+export type RequestAction<P = any> = ReduxAction & {
+  payload?: P;
+  meta: { creator: string };
+  error?: any;
+};
 
 export type Reducer<T = any, A extends Action = Action> = ReduxReducer<T, A>;
 
@@ -19,7 +25,7 @@ export const createAction = <P = any, M = any>(
   type,
   payload,
   meta,
-  error
+  error,
 });
 
 export const createTypes = <T extends string>(
