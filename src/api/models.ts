@@ -8,5 +8,8 @@ export interface UserDTO {
 
 export interface TagDTO {
   name: string;
-  user: UserDTO;
+}
+export interface UserCredentialDTO {
+  username: string;
+  password: string;
 }

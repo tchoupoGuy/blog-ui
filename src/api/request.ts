@@ -17,10 +17,11 @@ export async function myBlogRequest<T = any>({
   params,
   token,
 }: myBlogRequestParams) {
+  console.log(`MY_BLOG_ENV **--> ${process.env.REACT_APP_BACKEND_URL}`);
   return axios
     .request<T>({
       method,
-      baseURL: CONFIG.API_BASE,
+      baseURL: `${process.env.REACT_APP_BACKEND_URL}`,
       url: path.join("/"),
       headers: {
         Authorization: `JWT ${token}`,

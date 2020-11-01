@@ -26,35 +26,38 @@ export default function Authentication() {
   const { Meta } = Card;
 
   return (
-    <Card
-      style={{ width: "50%", margin: "15% 25%" }}
-      // cover={
-      //   <img
-      //     alt="example"
-      //     src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-      //   />
-      // }
-      // actions={[
-      //   <SettingOutlined key="setting" />,
-      //   <EditOutlined key="edit" />,
-      //   <EllipsisOutlined key="ellipsis" />
-      // ]}
-    >
-      <Meta
-        avatar={
-          <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-        }
-        title="GUY BLOG"
-        description="This is the description"
-      />
-      <Card.Grid hoverable={false} style={{ width: "50%", margin: "0 25%" }}>
-        {AuthComponent}
-      </Card.Grid>
-    </Card>
+    <React.Fragment>
 
-    // <div className="flex flex-col h-screen justify-center items-center">
-    //   <Title level={2}>GUY BLOG</Title>
-    //   <div className="w-11/12 max-w-sm">{AuthComponent}</div>
-    // </div>
+      <Card
+        style={{ width: "50%", margin: "15% 25%" }}
+        // cover={
+        //   <img
+        //     alt="example"
+        //     src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+        //   />
+        // }
+        // actions={[
+        //   <SettingOutlined key="setting" />,
+        //   <EditOutlined key="edit" />,
+        //   <EllipsisOutlined key="ellipsis" />
+        // ]}
+      >
+        <Meta
+          avatar={
+            <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+          }
+          title="GUY BLOG"
+          description="This is the description"
+        />
+        <Card.Grid hoverable={false} style={{ width: "50%", margin: "0 25%" }}>
+          {AuthComponent}
+        </Card.Grid>
+      </Card>
+  
+      {/* <div className="flex flex-col h-screen justify-center items-center">
+        <Title level={2}>GUY BLOG</Title>
+      <div className="w-11/12 max-w-sm">{AuthComponent}</div>
+      </div> */}
+    </React.Fragment>
   );
 }

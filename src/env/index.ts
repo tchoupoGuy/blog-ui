@@ -1,26 +1,22 @@
 type myBlogEnv = "dev" | "staging" | "prod";
 
 type myBlogEnvConfig = {
-  API_BASE: string;
-  API_KEY: string;
+  REACT_APP_BACKEND_URL: string;
 };
 
 export const MY_BLOG_ENV: myBlogEnv =
   (`${process.env.MY_BLOG_ENV}` as myBlogEnv) || "dev";
 
 const dev: myBlogEnvConfig = {
-  API_BASE: "http://localhost:8000/api/",
-  API_KEY: `${process.env.NEXT_PUBLIC_MY_BLOG_API_KEY}`,
+  REACT_APP_BACKEND_URL: "http://localhost:8000/api/",
 };
 
 const staging: myBlogEnvConfig = {
-  API_BASE: "https://staging-api.com/api/v1/",
-  API_KEY: `${process.env.NEXT_PUBLIC_MY_BLOG_API_KEY}`,
+  REACT_APP_BACKEND_URL: "https://staging-api.com/api/",
 };
 
 const prod: myBlogEnvConfig = {
-  API_BASE: "https://production/api/v1/",
-  API_KEY: `${process.env.NEXT_PUBLIC_MY_BLOG_API_KEY}`,
+  REACT_APP_BACKEND_URL: "https://production-api.com/api/",
 };
 
 const envs: Record<myBlogEnv, myBlogEnvConfig> = {

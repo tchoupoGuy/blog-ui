@@ -1,10 +1,10 @@
 import { useCallback, useState } from "react";
-// import { Auth } from "aws-amplify";
+import { AuthAPI } from "../../api/api";
 
 import {
   AuthStatus,
   NewPasswordModel,
-  SignInModel
+  SignInModel,
 } from "../../modules/authentication/types";
 import { delay } from "../../utils/misc";
 
@@ -18,11 +18,11 @@ export function useAuthFlow() {
     await delay(AUTH_DELAY);
 
     try {
-      //   const user = await Auth.signIn({ username: email, password });
+      const user = await AuthAPI.signIn({ username: email, password });
       //   const { challengeName } = user;
-      const challengeName = "NEW_PASSWORD_REQUIRED";
-      if (challengeName === "NEW_PASSWORD_REQUIRED") {
-        // setAuthUser(user);
+      // const challengeName = "NEW_PASSWORD_REQUIRED";
+      if (user) {
+        setAuthUser(user);
         setAuthStatus(AuthStatus.NEEDS_PASSWORD_CHANGE);
         return;
       }

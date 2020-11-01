@@ -1,6 +1,6 @@
 import { myBlogRequest } from "./request";
 
-import { TagDTO, UserDTO } from "./models";
+import { TagDTO, UserCredentialDTO } from "./models";
 
 export const TagAPI = {
   /**
@@ -9,15 +9,31 @@ export const TagAPI = {
   getAll: (token: string) =>
     myBlogRequest<TagDTO[]>({
       method: "GET",
-      path: ["tag-list"],
+      path: ["my-blog"],
       token: token,
     }),
 
   createTag: (token: string, newTag: TagDTO) =>
     myBlogRequest<any>({
-      method: "GET",
-      path: ["tag"],
+      method: "POST",
+      path: ["my-blog/tags/"],
       token: token,
       data: newTag,
+    }),
+};
+
+export const AuthAPI = {
+  signIn: (user: UserCredentialDTO) =>
+    myBlogRequest<any>({
+      method: "POST",
+      path: ["login"],
+      data: user,
+    }),
+
+  completeNewPassword: (password: string) =>
+    myBlogRequest<any>({
+      method: "POST",
+      path: ["password"],
+      data: password,
     }),
 };
