@@ -1,13 +1,13 @@
 import React, { useMemo } from "react";
 import { Card, Avatar } from "antd";
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  SettingOutlined
-} from "@ant-design/icons";
+// import {
+//   EditOutlined,
+//   EllipsisOutlined,
+//   SettingOutlined
+// } from "@ant-design/icons";
 
 import { useAuthFlow } from "../../modules/authentication/use-auth-flow";
-import Title from "../../components/typography/title";
+// import Title from "../../components/typography/title";
 import SignInForm from "../../modules/authentication/components/sign-in";
 import NewPasswordForm from "../../modules/authentication/components/new-password";
 import { AuthStatus } from "../../modules/authentication/types";

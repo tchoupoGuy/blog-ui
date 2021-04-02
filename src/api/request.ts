@@ -1,6 +1,6 @@
 import axios, { Method } from "axios";
 
-import { CONFIG } from "../env";
+// import { CONFIG } from "../env";
 
 type myBlogRequestParams = {
   path: string[];

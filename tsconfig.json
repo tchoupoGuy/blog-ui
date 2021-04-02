@@ -8,18 +8,36 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "module": "esnext",
+    "jsx": "react",
+    "baseUrl": ".",
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true
   },
+  "baseUrl": ".",
+  "paths": {
+    "@blog-ui/public/*": [
+      "./public/*"
+    ],
+    "@blog-ui/*": [
+      "./src/*"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
-    "src"
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }
